@@ -1,0 +1,6 @@
+interface:
+  display_name: "图文卡片 · v1.3.3"
+  short_description: "白底细线分格、细无衬线、居中标题，按内容组合模块，附带边框轻阴影总览。"
+  default_prompt: "Use $text-image-notes to create 3:4 white cards with centered light sans-serif titles, a rectangular tab attached to the entire page top-left corner, content-driven grid modules, checked PNG and HTML sources, no top metadata row, and a spaced contact sheet with fine borders and soft shadows."
+policy:
+  allow_implicit_invocation: true

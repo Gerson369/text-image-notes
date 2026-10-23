@@ -1,0 +1,51 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>四格并列</title><style>
+@font-face{font-family:"Noto Sans SC";src:url('../assets/NotoSansSC-VF.ttf');font-weight:100 900}
+:root{--sans:"Noto Sans SC",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff}
+.card{position:relative;width:1080px;height:1440px;background:#fff;color:#202124;font-family:var(--sans);font-weight:300;--muted:#686e76;--line:#c5cad0;--accent:#002fa7;--accent-ink:#002fa7;--accent-bg:transparent}
+.card[data-palette=yellow]{--accent:#ffd600;--accent-ink:#202124;--accent-bg:#ffd600}
+.card[data-palette=orange]{--accent:#ff7a00;--accent-ink:#202124;--accent-bg:#ff7a00}
+.pad{height:100%;padding:148px 88px 80px;display:grid;grid-template-rows:352px minmax(0,1fr) 44px;gap:32px}
+.title-zone{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.h-cover,.h-page{font-size:100px;line-height:1.3;font-weight:300;letter-spacing:1px}
+.lead{font-size:30px;line-height:1.7;font-weight:300;color:var(--muted);margin-top:24px}
+.panel{position:relative;border:2px solid var(--line);display:grid;grid-template-rows:minmax(300px,.92fr) minmax(0,1.08fr);min-height:0}
+.page-tab{position:absolute;top:0;left:0;z-index:1;background:#fff;border:2px solid var(--line);padding:14px 24px;font-size:24px;font-weight:300;line-height:1.4;white-space:nowrap}
+.hero{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:68px 40px 32px;min-height:0}
+.hero h2{font-size:42px;line-height:1.5;font-weight:300}
+.body{font-size:30px;line-height:1.7;font-weight:300}
+.hero .body{margin-top:24px}
+.modules{display:grid;min-height:0;border-top:2px solid var(--line)}
+.modules[data-grid=focus]{grid-template-columns:1fr}
+.modules[data-grid=pair]{grid-template-columns:repeat(2,minmax(0,1fr))}
+.modules[data-grid=facts]{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr))}
+.modules[data-grid=facts-side]{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.65fr);grid-template-rows:repeat(2,minmax(0,1fr))}
+.modules[data-grid=steps]{grid-template-rows:repeat(3,minmax(0,1fr))}
+.cell{padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-width:0;min-height:0}
+.cell h3{font-size:34px;font-weight:300;line-height:1.5}
+.cell .body{margin-top:16px;font-size:28px;line-height:1.6}
+.modules[data-grid=pair]>.cell+ .cell{border-left:2px solid var(--line)}
+.modules[data-grid=facts]>.cell:nth-child(even),.modules[data-grid=facts-side]>.cell:nth-child(even){border-left:2px solid var(--line)}
+.modules[data-grid=facts]>.cell:nth-child(n+3),.modules[data-grid=facts-side]>.cell:nth-child(3),.modules[data-grid=facts-side]>.cell:nth-child(4){border-top:2px solid var(--line)}
+.modules[data-grid=facts-side]>.cell:nth-child(1){grid-area:1/1}
+.modules[data-grid=facts-side]>.cell:nth-child(2){grid-area:1/2}
+.modules[data-grid=facts-side]>.cell:nth-child(3){grid-area:2/1}
+.modules[data-grid=facts-side]>.cell:nth-child(4){grid-area:2/2}
+.modules[data-grid=facts-side]>.side{grid-area:1/3/3/4;border-left:2px solid var(--line)}
+.modules[data-grid=steps]>.cell{display:grid;grid-template-columns:80px 1fr;gap:24px;text-align:left;align-items:center;justify-items:start}
+.modules[data-grid=steps]>.cell+.cell{border-top:2px solid var(--line)}
+.modules[data-grid=steps]>.cell .body{margin:0;font-size:30px}
+.num{font-size:62px;line-height:1.25;font-weight:600;color:var(--accent-ink);background:var(--accent-bg);padding:0 8px}
+strong,b,.emphasis{font-weight:600}
+.caption{font-size:24px;line-height:1.5;color:var(--muted)}
+.photo{display:block;width:100%;height:100%;object-fit:cover}
+.foot{display:flex;justify-content:space-between;align-items:center;font-size:22px;line-height:1.5;color:var(--muted)}
+</style></head><body>
+<section class="card" data-style="grid-notes" data-palette="blue" data-recipe="M04"><span class="page-tab" data-motion="none">并列要点</span><div class="pad">
+<div class="title-zone" data-block><h1 class="h-page" data-role="title">四个要点<br>各有位置</h1><p class="lead">四格并列 · 按内容关系选择结构</p></div>
+<section class="panel">
+<div class="hero" data-block><h2>先确认四项确实独立</h2><p class="body">每格只放一件有用的信息，<br>避免把同一个意思重复四遍。</p></div>
+<div class="modules" data-grid="facts"><div class="cell" data-block><h3>对象</h3><p class="body">这件事在说谁</p></div><div class="cell" data-block><h3>问题</h3><p class="body">为什么需要关注</p></div><div class="cell" data-block><h3>方法</h3><p class="body">具体可以怎么做</p></div><div class="cell" data-block><h3>限制</h3><p class="body">什么情况下不适用</p></div></div></section>
+<footer class="foot"><span>布局示意；数值 A—D 为占位</span><span>05 / 05</span></footer>
+</div></section></body></html>
